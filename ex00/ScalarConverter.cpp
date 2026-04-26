@@ -69,7 +69,7 @@ static void printFloat(std::string const &str)
     double _d = static_cast<double>(_f);
     char _c = static_cast<char>(_f);
 
-    if (errno == ERANGE)
+    if (errno == ERANGE) // if float over/underflows, double will too, but check float first to get correct sign
     {
         if (_f == HUGE_VAL)
         {

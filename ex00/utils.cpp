@@ -44,7 +44,7 @@ bool isPseudoliteral(std::string const &toConvert)
 
 bool isChar(const std::string &str)
 {
-    return str.length() == 1 && std::isprint(str[0]) && !std::isdigit(str[0]);
+    return str.length() == 1 && !std::isdigit(str[0]);
 }
 
 bool isInt(const std::string &toConvert)
