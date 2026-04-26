@@ -1,17 +1,6 @@
 #include "../includes/Serializer.hpp"
 #include <iostream>
 
-/**
- * The reinterpret_cast allows you to convert any pointer type to any other
- * pointer type. But it is dangerous and doesn't perform safety checks.
- * 
- * We use uintptr_t because its size is guaranteed to be able to store a
- * pointer without loss of information
- * 
- * Use serialize() on the address of the Data object and pass its return value
- * to deserialize(). Then, ensure the return value of deserialize() compares
- * equal to the original pointer
- */
 int	main()
 {
 	Data data1;

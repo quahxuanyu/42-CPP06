@@ -1,9 +1,5 @@
 #include "ScalarConverter.hpp"
 
-/**
- * Static non-member functions ensure the function cannot be used outside this file.
- */
-
 static void printChar(std::string const &str)
 {
     char c = str[0];
@@ -29,6 +25,7 @@ static void printInt(std::string const &str)
     else
         std::cout << "char: Impossible" << std::endl;
 
+    // check if over/underflow
     if (errno == ERANGE)
     {
         if (i == INT_MAX)
@@ -69,7 +66,8 @@ static void printFloat(std::string const &str)
     double _d = static_cast<double>(_f);
     char _c = static_cast<char>(_f);
 
-    if (errno == ERANGE) // if float over/underflows, double will too, but check float first to get correct sign
+    // if float over/underflows, double will too, but check float first to get correct sign
+    if (errno == ERANGE)
     {
         if (_f == HUGE_VAL)
         {
