@@ -3,32 +3,41 @@
 
 #include <iostream>
 #include <sstream>
+#include <climits>
+#include <limits>
+#include <cerrno>
+#include <cmath>
+#include <cstdlib>
+#include <string>
 
-class ScalarConverter {
-    private:
-        ScalarConverter(); // Private constructor to prevent instantiation
-        ~ScalarConverter();
-        ScalarConverter(const ScalarConverter& other);
-        ScalarConverter& operator=(const ScalarConverter& other);
+class ScalarConverter
+{
+private:
+    ScalarConverter(); // Private constructor to prevent instantiation
+    ~ScalarConverter();
+    ScalarConverter(const ScalarConverter &other);
+    ScalarConverter &operator=(const ScalarConverter &other);
 
-    public:
-        static void convert(const std::string &str); // Static method to perform conversion, can be called without an instance
+public:
+    static void convert(const std::string &str); // Static method to perform conversion, can be called without an instance
 };
-    
-enum Type {
+
+enum Type
+{
     CHAR,
     INT,
     FLOAT,
     DOUBLE,
-    SPECIAL,
+    PSEUDOLITERAL,
     INVALID
 };
 
-Type detectType(const std::string &str); // Function to detect the type of the literal
+Type detectType(const std::string &str);
 bool isChar(const std::string &str);
 bool isInt(const std::string &str);
 bool isFloat(const std::string &str);
 bool isDouble(const std::string &str);
-bool isSpecial(const std::string &str);
+bool isPseudoliteral(const std::string &str);
+int ft_stoi(const std::string &str);
 
-#endif 
+#endif
