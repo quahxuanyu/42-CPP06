@@ -1,4 +1,4 @@
-CXX = command /usr/bin/g++
+CXX = c++
 CXX_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = srcs/Serializer.cpp srcs/main.cpp
