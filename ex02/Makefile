@@ -21,7 +21,7 @@ $(OBJS_DIR)/%.o: %.cpp
 	$(CXX) $(CXX_FLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS_DIR) home_shrubbery
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
 	rm -rf $(TARGET)
